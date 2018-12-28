@@ -1,7 +1,7 @@
 # MybatisLogSql
 IDEA Plugin MyBatis Log Sql.       from Clipboard mybatis log,By this Plugin Process  create result sql will put to Clipboard.
 <br/>
-      ## English
+      ##English
       Restore the mybatis generate sql to original whole sql.<br/>
       It will generate sql statements with replace ? to the really param value.<br/>
       Through the "Tools -> MyBatis Log Plugin" menu you can tail the sql log.<br/>
@@ -9,7 +9,7 @@ IDEA Plugin MyBatis Log Sql.       from Clipboard mybatis log,By this Plugin Pro
       You can selected the "Format Sql" button on the left to format the generate sql statements.<br/>
       You can select the console sql log and right click "Restore Sql from Selection" menu to restore sql.<br/>
       Prerequisite: sql log must contain "Preparing:" and "Parameters:" <br/>
-      ## 中文
+      ##中文
 把 mybatis 输出的sql日志还原成完整的sql语句<br/>
       将日志输出的sql语句中的问号 ? 替换成真正的参数值<br/>
       通过 "右键鼠标，菜单->MybatisLogSql" 菜单<br/>
