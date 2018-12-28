@@ -19,6 +19,6 @@ IDEA Plugin MyBatis Log Sql.       from Clipboard mybatis log,By this Plugin Pro
 ## Example: Clipboard mybatis log
 ==>  Preparing: SELECT * from t_test where id = ?
 12-28 17:22:05.102 [qtp1635985705-26] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==> Parameters: 1(Long)
-      <br/>
-      <a href="https://github.com/lyg123/MybatisLogSql">Github</a> | <a href="https://github.com/lyg123/MybatisLogSql/issues">Issues</a>
-       <br/>
+<br/>
+<a href="https://github.com/lyg123/MybatisLogSql">Github</a> | <a href="https://github.com/lyg123/MybatisLogSql/issues">Issues</a>
+ <br/>
