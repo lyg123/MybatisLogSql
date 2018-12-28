@@ -16,7 +16,7 @@ IDEA Plugin MyBatis Log Sql.       from Clipboard mybatis log,By this Plugin Pro
 ### 把Mybatis log复制到剪贴板，然后鼠标右击菜单MybatisLogSql，这样sql语句结果就复制到剪贴板
 ## 注意：
 剪贴板sql日志须包含"==>  Preparing:"和"==> Parameters:"才能正常解析
-      Example: Clipboard mybatis log
+## Example: Clipboard mybatis log
 ==>  Preparing: SELECT * from t_test where id = ?
 12-28 17:22:05.102 [qtp1635985705-26] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==> Parameters: 1(Long)
       <br/>
