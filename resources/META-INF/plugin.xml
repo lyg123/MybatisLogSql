@@ -1,0 +1,67 @@
+<idea-plugin>
+  <id>com.your.company.unique.plugin.id</id>
+  <name>Plugin display name here</name>
+  <version>1.0</version>
+  <vendor email="liyghting@qq.com" url="">xxx</vendor>
+
+  <description>
+    <![CDATA[
+      MyBatis Log Sql.
+      from Clipboard mybatis log,By this Plugin Process  create result sql will put to Clipboard.
+      <br/>
+      -----------------------------------------------------------------------------------------------------------------------
+      <br/>
+      Restore the mybatis generate sql to original whole sql.<br/>
+      It will generate sql statements with replace ? to the really param value.<br/>
+      Through the "Tools -> MyBatis Log Plugin" menu you can tail the sql log.<br/>
+      You can selected the "Filter" button on the left to filter the contents don't wanna display.<br/>
+      You can selected the "Format Sql" button on the left to format the generate sql statements.<br/>
+      You can select the console sql log and right click "Restore Sql from Selection" menu to restore sql.<br/>
+      Prerequisite: sql log must contain "Preparing:" and "Parameters:" <br/>
+      -----------------------------------------------------------------------------------------------------------------------
+      <br/>
+      把 mybatis 输出的sql日志还原成完整的sql语句<br/>
+      将日志输出的sql语句中的问号 ? 替换成真正的参数值<br/>
+      通过 "右键鼠标，菜单->MybatisLogSql" 菜单<br/>
+      把Mybatis log复制到剪贴板，然后鼠标右击菜单MybatisLogSql，这样sql语句结果就复制到剪贴板<br/>
+      注意：剪贴板sql日志须包含"==>  Preparing:"和"==> Parameters:"才能正常解析<br/>
+      Example: Clipboard mybatis log
+==>  Preparing: SELECT * from t_test where id = ?
+12-28 17:22:05.102 [qtp1635985705-26] DEBUG org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:159) - ==> Parameters: 1(Long)
+      <br/>
+      <a href="https://github.com/lyg123/MybatisLogSql">Github</a> | <a href="https://github.com/lyg123/MybatisLogSql/issues">Issues</a><br/>
+      <br/>
+    ]]></description>
+
+  <change-notes><![CDATA[
+      init function complete!
+      thank you use
+
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="145.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+    <action id="MybatisLogSql" class="MybatisLogSql" text="MybatisLogSql">
+      <add-to-group group-id="GenerateGroup" anchor="first"/>
+      <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+    </action>
+  </actions>
+
+  <application-components>
+
+  </application-components>
+</idea-plugin>
