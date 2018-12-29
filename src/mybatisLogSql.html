@@ -1,0 +1,42 @@
+<script type="text/javascript">
+function sql() {
+	var preSql = document.getElementById('preSql').value;
+	console.log(preSql,"preSql");
+    <!-- mybatis字段 -->
+	var sqlPreparing = preSql.split("==> Parameters: ")[0].split(/[\r\n]/g)[0].split("==>  Preparing: ")[1].trim();
+	var sqlParameters = preSql.split("==> Parameters: ")[1].trim();
+	console.log(sqlParameters,"sqlParameters");
+	var colTypeArray = [];
+	var tempsqlParameters = sqlParameters.replace(/\([A-Za-z]+\)|null/g, function(th) { 
+		colTypeArray.push(th);
+		if(th=='null') return th;
+		return '';
+	});
+	console.log(tempsqlParameters,"tempsqlParameters");
+	var sqlParametersArray = tempsqlParameters.split(', '); 
+	console.log(colTypeArray,"colTypeArray");
+	console.log(sqlParametersArray,"sqlParametersArray");
+	var str = sqlPreparing.split('?');
+	console.log(str,"str");
+	var sqlStr='';
+	sqlParametersArray.forEach((item, index) => {
+		if((colTypeArray[index] == '(String)' || colTypeArray[index] =='(Timestamp)' || colTypeArray[index] =='(Date)') && !(item == 'null')) {
+			sqlStr = sqlStr+str[index]+"'"+item+"'";
+		} else {
+			sqlStr = sqlStr+str[index]+item;
+		}
+		
+	}); 
+	sqlStr = sqlStr + str[str.length-1]+";";
+	console.log(sqlStr);
+	document.getElementById("resultSql").innerHTML= sqlStr;
+}
+</script>
+(From)待转换的sql:<textarea id="preSql" rows="10" cols="100"></textarea>
+<br/>
+<br/>
+<input type = button  value="(Transfer)日志转换sql" onclick="sql()"/>
+<br/>
+(To)转换好的sql:<textarea id="resultSql" rows="10" cols="100"></textarea>
+
+
