@@ -36,7 +36,7 @@ public class MybatisLogSql extends AnAction {
             }
         }
         System.out.println("preSql = " + preSql);
-        if (!(preSql.contains("==>  Preparing: ") &&  preSql.contains("==>  Parameters: "))) {
+        if (!(preSql.contains("==>  Preparing: ") &&  preSql.contains("==> Parameters: "))) {
 
             LogUtils.showError("Clipboard Mybatis log not contain ==>  Preparing: Or ==>  Parameters: ");
         }
@@ -68,7 +68,7 @@ public class MybatisLogSql extends AnAction {
         }
 
 
-        sqlStr = sqlStr + sqlPreparing.substring(sqlPreparing.lastIndexOf("?")+1).trim()+";";
+        sqlStr = sqlStr + sqlPreparing.substring(sqlPreparing.lastIndexOf("?")+1)+";";
 
         System.out.println("sqlStr=" + sqlStr);
 
